@@ -16,7 +16,7 @@ Victim& Victim::operator=(Victim const& right)
 	return *this;
 }
 
-Victim::Victim(Victim const& right) : Victim(right.getName())
+Victim::Victim(Victim const& right) : _name(right.getName())
 {
 	std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;
 }

@@ -1,22 +1,15 @@
-#include "RadScorpion.hpp"
+#ifndef EX_HPP
+#define EX_HPP
 
-RadScorpion::RadScorpion() : Enemy(80 , "RadScorpion") 
+class	example
 {
-	std::cout << "* click click click *" << std::endl;
-}
+	private:
 
-RadScorpion::~RadScorpion()
-{
-	std::cout << "* SPROTCH *" << std::endl;
-}
+	public:
+		~example();
+		example();
+	example& operator=(example const& right);
+	example(example const& right);
+};
 
-RadScorpion& RadScorpion::operator=(RadScorpion const& right)
-{
-	Enemy::operator=(right);
-	return *this;
-}
-
-RadScorpion::RadScorpion(RadScorpion const& right) : Enemy(right)
-{
-
-}
+#endif

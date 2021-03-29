@@ -1,45 +1,48 @@
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon() : _name(" "), _damage(0), _AP(0)
+AWeapon::AWeapon() : _name(std::string()),
+	_apcost(0), _damage(0)
 {
 
-}
-
-AWeapon::AWeapon(std::string const & name, int apcost, int damage) : _name(name), _AP(apcost), _damage(damage)
-{
-	
 }
 
 AWeapon::~AWeapon()
 {
-	std::cout << getName() << " weapon deleted! " << std::endl;
+
 }
 
 AWeapon& AWeapon::operator=(AWeapon const& right)
 {
 	this->_name = right.getName();
 	this->_damage = right.getDamage();
-	this->_AP = right.getAPCost();
-
+	this->_apcost = right.getAPCost();
 	return *this;
 }
 
-AWeapon::AWeapon(AWeapon const& right)
+AWeapon::AWeapon(const AWeapon & right) : _name(right.getName()),
+	_damage(right.getDamage()), _apcost(right.getAPCost())
 {
-	*this = right;
+
 }
 
-std::string		AWeapon::getName() const
+
+AWeapon::AWeapon(std::string const & name, int apcost, int damage) : _name(name),
+	_apcost(apcost), _damage(damage)
 {
-	return (this->_name);
+
 }
 
-int				AWeapon::getAPCost() const
+std::string AWeapon::getName() const
 {
-	return (this->_AP);
+	return (_name);
 }
 
-int				AWeapon::getDamage() const
+int AWeapon::getAPCost() const
 {
-	return (this->_damage);
+	return (_apcost);
+}
+
+int AWeapon::getDamage() const
+{
+	return (_damage);
 }

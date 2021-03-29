@@ -1,24 +1,24 @@
-#ifndef AWEAPON_HPP
-#define AWEAPON_HPP
+#ifndef EX_HPP
+#define EX_HPP
 
 # include <string>
 # include <iostream>
 
-class	AWeapon
+class AWeapon
 {
-	private:
-		std::string _name;
-		int _damage;
-		int _AP;
-	public:
-		virtual ~AWeapon();
-		AWeapon(std::string const & name, int apcost, int damage);
+	protected:
 		AWeapon();
-		AWeapon& operator=(AWeapon const& right);
-		AWeapon(AWeapon const& right);
+		std::string _name;
+		int 				_apcost;
+		int 				_damage;
+	public:
+		AWeapon(std::string const & name, int apcost, int damage);
+		AWeapon(const AWeapon & right);
+		virtual ~AWeapon();
 		std::string getName() const;
 		int getAPCost() const;
 		int getDamage() const;
+		AWeapon& operator=(AWeapon const& right);
 		virtual void attack() const = 0;
 };
 
