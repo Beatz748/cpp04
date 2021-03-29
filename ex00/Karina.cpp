@@ -1,21 +1,22 @@
-#include "example.hpp"
+#include "Karina.hpp"
 
-example::example()
+Karina::Karina() : _name(name), _title(title)
 {
-
+	std::cout << name << ", " << title << ", is born!" << std::endl;
 }
 
-example::~example()
+Karina::~Karina()
 {
-
+	std::cout << name << ", " << title
+	<<", is dead! Consequences will never be the same!" << std::endl;
 }
 
-example& example::operator=(example const& right)
+Karina& Karina::operator=(Karina const& right)
 {
 	return *this;
 }
 
-example::example()
+Karina::Karina()
 {
 
 }

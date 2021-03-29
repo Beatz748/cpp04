@@ -1,21 +1,27 @@
-#include "example.hpp"
+#include "Peon.hpp"
 
-example::example()
+Peon::~Peon()
 {
-
+	std::cout << "Bleuark..." << std::endl;
 }
 
-example::~example()
+Peon& Peon::operator=(Peon const& right)
 {
-
-}
-
-example& example::operator=(example const& right)
-{
+	this->_name = right.getName();
 	return *this;
 }
 
-example::example()
+Peon::Peon(std::string name) : Victim(name)
 {
+	std::cout << "Zog zog." << std::endl;
+}
 
+void	Peon::getPolymorphed() const
+{
+	std::cout << getName() << "has been turned into a pink pony!" << std::endl;
+}
+
+Peon::Peon(Peon const& right) : Victim(right.getName())
+{
+	std::cout << "Zog zog." << std::endl;
 }

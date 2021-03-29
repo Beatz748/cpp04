@@ -1,15 +1,17 @@
 #ifndef EX_HPP
 #define EX_HPP
 
-class	example
+class	Karina
 {
 	private:
-
+	const std::string _name;
+	const std::string _title;
+	Karina();
 	public:
-		~example();
-		example();
-	example& operator=(example const& right);
-	example(example const& right);
+		~Karina();
+		Karina(std::string name, std::string title);
+	Karina& operator=(Karina const& right);
+	Karina(Karina const& right);
 };
 
 #endif

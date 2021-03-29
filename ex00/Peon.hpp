@@ -1,15 +1,18 @@
-#ifndef EX_HPP
-#define EX_HPP
+#ifndef PEON_HPP
+#define PEON_HPP
 
-class	example
+# include "Victim.hpp"
+
+class	Peon : public Victim
 {
 	private:
-
+		Peon();
 	public:
-		~example();
-		example();
-	example& operator=(example const& right);
-	example(example const& right);
+		virtual ~Peon();
+		Peon(std::string name);
+	Peon& operator=(Peon const& right);
+	Peon(Peon const& right);
+	virtual void getPolymorphed() const;
 };
 
 #endif

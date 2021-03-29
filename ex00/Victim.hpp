@@ -1,15 +1,23 @@
-#ifndef EX_HPP
-#define EX_HPP
+#ifndef VICTIM_HPP
+#define VICTIM_HPP
 
-class	example
+# include <string>
+# include <iostream>
+
+class	Victim
 {
 	private:
-
+		Victim();
+		std::string _name;
 	public:
-		~example();
-		example();
-	example& operator=(example const& right);
-	example(example const& right);
+		virtual ~Victim();
+		Victim(std::string name);
+	Victim& operator=(Victim const& right);
+	Victim(Victim const& right);
+	std::string getName() const;
+	virtual void getPolymorphed() const;
 };
+
+std::ostream &operator<<(std::ostream & in, const Victim & sorcerer);
 
 #endif
