@@ -5,7 +5,7 @@ Peon::~Peon()
 	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon& Peon::operator=(Peon const& right)
+Peon &Peon::operator=(Peon const &right)
 {
 	this->_name = right.getName();
 	return *this;
