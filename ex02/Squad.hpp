@@ -14,8 +14,8 @@ class Squad : public ISquad
 		Squad(Squad const & right);
 		Squad & operator=(const Squad & right);
 		int getCount() const;
-		~Squad();
-		ISpaceMarine* getUnit(int count);
+		virtual ~Squad();
+		ISpaceMarine* getUnit(int count) const;
 		int push(ISpaceMarine *unit);
 };
 
