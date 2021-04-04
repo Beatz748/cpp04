@@ -39,8 +39,6 @@ void    test() {
     me->use(3, *bob);
     std::cout << src->createMateria("random") << std::endl;
 
-
-
     delete tmp;
     delete bob;
     delete me;
@@ -49,6 +47,11 @@ void    test() {
 
 int     main()
 {
+    test();
+    test();
+    test();
+    test();
+    test();
     test();
     sleep(20);
     return 0;
