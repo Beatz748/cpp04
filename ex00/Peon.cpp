@@ -18,7 +18,7 @@ Peon::Peon(std::string name) : Victim(name)
 
 void	Peon::getPolymorphed() const
 {
-	std::cout << getName() << "has been turned into a pink pony!" << std::endl;
+	std::cout << getName() << " has been turned into a pink pony!" << std::endl;
 }
 
 Peon::Peon(Peon const& right) : Victim(right.getName())

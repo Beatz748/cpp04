@@ -1,15 +1,27 @@
-#ifndef EX_HPP
-#define EX_HPP
+#include "SuperMutant.hpp"
 
-class	example
+SuperMutant::SuperMutant() : Enemy(170, "SuperMutant")
 {
-	private:
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
+}
 
-	public:
-		~example();
-		example();
-	example& operator=(example const& right);
-	example(example const& right);
-};
+SuperMutant::~SuperMutant()
+{
+	std::cout << "Aaargh..." << std::endl;
+}
 
-#endif
+SuperMutant& SuperMutant::operator=(SuperMutant const& right)
+{
+	Enemy::operator=(right);
+	return *this;
+}
+
+SuperMutant::SuperMutant(SuperMutant const& right) : Enemy(right)
+{
+
+}
+
+void	SuperMutant::takeDamage(int num)
+{
+	Enemy::takeDamage(num - 3);
+}

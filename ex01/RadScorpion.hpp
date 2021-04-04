@@ -1,15 +1,17 @@
-#ifndef EX_HPP
-#define EX_HPP
+#ifndef RADSCORPION_HPP
+#define RADSCORPION_HPP
 
-class	example
+# include "Enemy.hpp"
+
+class	RadScorpion : public Enemy
 {
 	private:
 
 	public:
-		~example();
-		example();
-	example& operator=(example const& right);
-	example(example const& right);
+		virtual ~RadScorpion();
+		RadScorpion();
+	RadScorpion& operator=(RadScorpion const& right);
+	RadScorpion(RadScorpion const& right);
 };
 
 #endif

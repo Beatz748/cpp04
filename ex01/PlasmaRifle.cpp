@@ -7,24 +7,21 @@ PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
 
 PlasmaRifle::~PlasmaRifle()
 {
-
+	std::cout << getName() << " Plasma deleted "  << std::endl;
 }
 
 PlasmaRifle& PlasmaRifle::operator=(PlasmaRifle const& right)
 {
-	this->_name = right.getName();
-	this->_damage = right.getDamage();
-	this->_apcost = right.getAPCost();
-
+	AWeapon::operator=(right);
 	return *this;
 }
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle & right) : AWeapon(right)
+PlasmaRifle::PlasmaRifle(PlasmaRifle const& right) : AWeapon(right)
 {
-
+	
 }
 
-void PlasmaRifle::attack() const
+void	PlasmaRifle::attack() const
 {
-	std::cout << "* piouuu piouuu piouu *" << std::endl;
+	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }

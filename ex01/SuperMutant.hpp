@@ -1,15 +1,18 @@
-#ifndef EX_HPP
-#define EX_HPP
+#ifndef SUPERMUTANT_HPP
+#define SUPERMUTANT_HPP
 
-class	example
+# include "Enemy.hpp"
+
+class	SuperMutant : public Enemy
 {
 	private:
 
 	public:
-		~example();
-		example();
-	example& operator=(example const& right);
-	example(example const& right);
+		virtual ~SuperMutant();
+		SuperMutant();
+	SuperMutant& operator=(SuperMutant const& right);
+	SuperMutant(SuperMutant const& right);
+	void	takeDamage(int num);
 };
 
 #endif

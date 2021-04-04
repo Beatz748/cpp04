@@ -6,14 +6,13 @@
 class	PlasmaRifle : public AWeapon
 {
 	private:
-	
+
 	public:
-		~PlasmaRifle();
+		virtual ~PlasmaRifle();
 		PlasmaRifle();
 	PlasmaRifle& operator=(PlasmaRifle const& right);
 	PlasmaRifle(PlasmaRifle const& right);
 	void attack() const;
-
 };
 
 #endif

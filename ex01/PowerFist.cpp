@@ -7,24 +7,21 @@ PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 
 PowerFist::~PowerFist()
 {
-
+	std::cout << getName() << " Plasma deleted "  << std::endl;
 }
 
 PowerFist& PowerFist::operator=(PowerFist const& right)
 {
-	this->_name = right.getName();
-	this->_damage = right.getDamage();
-	this->_apcost = right.getAPCost();
-
+	AWeapon::operator=(right);
 	return *this;
 }
 
-PowerFist::PowerFist(const PowerFist & right) : AWeapon(right)
+PowerFist::PowerFist(PowerFist const& right) : AWeapon(right)
 {
-
+	
 }
 
-void PowerFist::attack() const
+void	PowerFist::attack() const
 {
-	std::cout << "* pschhh... SBAM! *" << std::endl;
+	std::cout <<  "* pschhh... SBAM! *" << std::endl;
 }

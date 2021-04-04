@@ -12,6 +12,7 @@ Karina::~Karina()
 
 Karina& Karina::operator=(Karina const& right)
 {
+	this->_name = right.getName();
 	return *this;
 }
 

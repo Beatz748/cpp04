@@ -14,15 +14,18 @@ Character::Character(std::string name) : _name(name)
 
 Character::~Character()
 {
-	int i = 0;
-	while (i < 4)
-		if (_inventory[i] != NULL)
-		delete this->_inventory[i++];
+	int i = -1;
+	while (++i < 4 && this->_inventory[i])
+		delete this->_inventory[i];
 }
 
 Character::Character(const Character & right)
 {
-	*this = right;
+	int i = -1;
+
+	this->_name = right.getName();
+	while (++i < 4)
+		this->_inventory[i] = right._inventory[i]->clone();
 }
 
 Character & Character::operator=(const Character & right)
@@ -34,9 +37,10 @@ Character & Character::operator=(const Character & right)
 	if (this->_inventory[0])
 		while (this->_inventory[++i] && i < 4)
 			delete this->_inventory[i];
+	
 	this->_name = right.getName();
 	while (++i < 4)
-		this->_inventory[i] = right._inventory[i]->clone();
+		this->_inventory[i] = right._inventory[i];
 	return (*this);
 }
 
@@ -64,7 +68,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < 0 || idx > 3)
+	if (idx <= 0 || idx > 4)
 		return ;
 	if (this->_inventory[idx])
 		this->_inventory[idx]->use(target);
