@@ -53,8 +53,6 @@ void	Character::attack(Enemy *enemy)
 {
 	int	value = this->_weapon->getAPCost();
 
-	if (enemy->getHP() <= 0)
-		delete enemy;
 	if (this->_AP >= value && this->_weapon)
 	{
 		std::cout << getName() << " attacks "
@@ -64,6 +62,8 @@ void	Character::attack(Enemy *enemy)
 		this->_weapon->attack();
 		this->_AP -= value;
 		enemy->takeDamage(this->_weapon->getDamage());
+	if (enemy->getHP() <= 0)
+		delete enemy;
 	}
 }
 
