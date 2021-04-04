@@ -10,9 +10,10 @@ Squad::Squad() : _units(NULL), _num(0), _cap(20)
 Squad::Squad(const Squad & right)
 {
 	int i = -1;
+
 	this->_units = new ISpaceMarine*[right._cap];
 	while (++i < right._cap)
-		this->_units[i] = right._units[i];
+		this->_units[i] = right._units[i]->clone();
 	this->_cap = right._cap;
 	this->_num = right._num;
 }
@@ -27,9 +28,17 @@ Squad::~Squad()
 
 Squad & Squad::operator=(const Squad &right)
 {
+	int i = -1;
+
 	if (this == &right)
 		return (*this);
+	while (++i < this->_num)
+		delete this->_units[i];
+	delete this->_units;
+	i = -1;
 	this->_units = new ISpaceMarine*[right._cap];
+	while (++i < right._cap)
+		this->_units[i] = right._units[i]->clone();
 	this->_num = right._num;
 	this->_cap = right._cap;
 	return (*this);
