@@ -12,11 +12,14 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {
-	    for (int i = 0; i < 4; i += 1)
-    {
-        if (this->_st[i] != NULL)
-            delete _st[i];
-    }
+
+	int i = 0;
+	while (_st[i] && i < 4)
+	{
+		delete this->_st[i];
+		this->_st[i] = NULL;
+		i++;
+	}
 }
 
 MateriaSource::MateriaSource(const MateriaSource & right)

@@ -15,10 +15,10 @@ Character::Character(std::string name) : _name(name)
 Character::~Character()
 {
 	int i = 0;
-	while (i < 4)
+	while (_inventory[i] && i < 4)
 	{
-		if (_inventory[i] != NULL)
 		delete this->_inventory[i];
+		this->_inventory[i] = NULL;
 		i++;
 	}
 }
