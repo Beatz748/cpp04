@@ -5,17 +5,18 @@ MateriaSource::MateriaSource()
 {
 	int i = -1;
 
-	while (this->_st[++i])
+	while (++i < 4)
 		this->_st[i] = NULL;
 	this->_size = 0;
 }
 
 MateriaSource::~MateriaSource()
 {
-	int i = -1;
-
-	while (this->_st[++i])
-		delete _st[i];
+	    for (int i = 0; i < 4; i += 1)
+    {
+        if (this->_st[i] != NULL)
+            delete _st[i];
+    }
 }
 
 MateriaSource::MateriaSource(const MateriaSource & right)

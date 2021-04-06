@@ -48,11 +48,7 @@ void    test() {
 int     main()
 {
     test();
-    test();
-    test();
-    test();
-    test();
-    test();
     sleep(20);
     return 0;
+
 }

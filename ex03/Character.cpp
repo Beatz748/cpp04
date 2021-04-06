@@ -16,8 +16,11 @@ Character::~Character()
 {
 	int i = 0;
 	while (i < 4)
+	{
 		if (_inventory[i] != NULL)
-		delete this->_inventory[i++];
+		delete this->_inventory[i];
+		i++;
+	}
 }
 
 Character::Character(const Character & right)
